@@ -1,0 +1,366 @@
+{
+	"info": {
+		"_postman_id": "1f93e7c1-8475-44a3-a997-72cde5842526",
+		"name": "Minispire Loan",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Client",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Signup",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "name",
+											"value": "test",
+											"type": "text"
+										},
+										{
+											"key": "email",
+											"value": "test@minispireloan.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/signup",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"signup"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "test@minispire.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "123456",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Loan",
+					"item": [
+						{
+							"name": "Create Loan",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "amount",
+											"value": "10",
+											"type": "text"
+										},
+										{
+											"key": "currency",
+											"value": "USD",
+											"type": "text"
+										},
+										{
+											"key": "duration",
+											"value": "4",
+											"type": "text"
+										},
+										{
+											"key": "first_paydate",
+											"value": "01-01-2023",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/loan/create",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"loan",
+										"create"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "List Own Loans",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url}}/loan/list",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"loan",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Repay Loan",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "loan_id",
+											"value": "2",
+											"type": "text"
+										},
+										{
+											"key": "pay_date",
+											"value": "2022-12-25",
+											"type": "text"
+										},
+										{
+											"key": "paid_amount",
+											"value": "10",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/loan/repay",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"loan",
+										"repay"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Auth",
+					"item": [
+						{
+							"name": "Login",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "email",
+											"value": "admin@minispireloan.com",
+											"type": "text"
+										},
+										{
+											"key": "password",
+											"value": "pass1234",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/login",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Logout",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "formdata",
+									"formdata": []
+								},
+								"url": {
+									"raw": "{{base_url}}/auth/admin/logout",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"auth",
+										"admin",
+										"logout"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Loan",
+					"item": [
+						{
+							"name": "Update Loan Status",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "urlencoded",
+									"urlencoded": [
+										{
+											"key": "id",
+											"value": "1",
+											"description": "loan id",
+											"type": "text"
+										},
+										{
+											"key": "status",
+											"value": "approved",
+											"description": "possible values => (pending, approved, paid)",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "{{base_url}}/admin/loan/update",
+									"host": [
+										"{{base_url}}"
+									],
+									"path": [
+										"admin",
+										"loan",
+										"update"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiYTY1YzkxOGIzMWIyODA5NDA0NDk4NmEyYjBiNzMyOGJhOWM4ZWM4NzgzY2JhMTMwNzdlOTVjNDg0OTVhYzFhODAxZDMxYmUxYjNiMTliYTkiLCJpYXQiOjE2NzE4NzExMDkuMTMzMTg0LCJuYmYiOjE2NzE4NzExMDkuMTMzMTkyLCJleHAiOjE2Nzk2NDcxMDkuMTEwNTExLCJzdWIiOiIxIiwic2NvcGVzIjpbXX0.3yoH6_ycv8fYZpqVnDJUUsv0BZ6amlflf_Chd6gjxr1wcuqO8K8jRhn0N2En9n-OIezkcXMpeYnpS2IsjPeMqU95BU58bHfmcbNYJtBFfBzp53GeyippWzAfRNlOZqggxblipwpOGpQqSqghG-ylTqTnlWRphQos6CQUblbDt9x7w3J56YiDLEPq_6zBhNdG9mlEzx90KW4-yk_qxoEA8gFKPkdDTHSEKwkzCssQKTgJMlq5AsIgET6zNVSk6pCNdLji7DWDQS1mbUJQb7QPHlz_pr73lpZohBtow9k8PCgfc6tgLGn8NPPX0MLttkpZCo3H-QrKoP0Yi-bmWhr16sOdgjdAVLsIWKyElzvnIiBdUdI6i1RefGooWoNjT7IzPyl_bbRhQEkrMq1Bndutz9FmU_Ah6XZKfUNDBTwVcPVKaFA1uhbAxGEndKuLjaib-Q7BF0PBdYptxta4iz-_cyIdo5hoddOfSIbHEe48TmMgVx0cAedqvEYjpZc616ljXpxEHwaqcotKrpU5JBwHcFe5mNzm_Ns0NkVGrvyzZPWO1pPt1yWollOQ7RKJ3KFxdv49x7MRYQOskVZ-TgeRrzhnm3l4S-Ti0Gk5jdq5wJqueG5ck5dkvg2gyMD3XUVTV95ycglqxEkOLVLnFK6hWrFQLCK5HJkle_B7qjMAW3A",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "base_url",
+			"value": "http://127.0.0.1:8000/api"
+		}
+	]
+}

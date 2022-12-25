@@ -28,7 +28,7 @@ Route::group(['middleware' => ['auth:api']], function () {
                 Route::post('logout', [ClientAuth::class,'logout'])->name('auth.logout');
     });
 
-    Route::group(['prefix' => 'loans'], function() {
+    Route::group(['prefix' => 'loan'], function() {
         Route::post('create', [LoanController::class, 'create'])->name('loan.create');
         Route::put('repay', [LoanController::class,'repay'])->name('loan.repay');
         Route::get('list', [LoanController::class,'detail'])->name('loans.detail');

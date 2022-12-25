@@ -41,6 +41,7 @@ class LoanController extends BaseController
     {
         try {
             $input = $request->validated();
+            $input['user_id'] = empty($input['user_id']) ? Auth::user()->id : $input['user_id'];
             $loan = $this->loanRepo->create($input);
             return $this->success("Loan Created successfully.", $loan); 
         } catch (\Exception $e) {

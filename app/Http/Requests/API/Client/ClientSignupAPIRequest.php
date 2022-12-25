@@ -32,6 +32,12 @@ class ClientSignupAPIRequest extends BaseAPIRequest
         ];
     }
 
+    /**
+     * Message for validation
+     *
+     * @return array
+     * @author Parth L.
+     */
     public function messages()
     {
         return [

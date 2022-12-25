@@ -26,7 +26,7 @@ class LoanCreateAPIRequest extends BaseAPIRequest
     public function rules()
     {
         return [
-            'user_id' => 'required|integer',
+            'user_id' => 'sometimes|integer',
             'amount' => 'required|integer',
             'currency' => 'required|string',
             'duration' => 'required|integer',

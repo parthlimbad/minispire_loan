@@ -52,7 +52,7 @@ class AuthController extends BaseController
             $token = $tokenResult->token;
             $token->save();
 
-            return $this->success("Login successfully.", [
+            return $this->success("Admin Login successfully.", [
                 'access_token' => $tokenResult->accessToken,
                 'token_type' => 'Bearer',
                 'expires_at' => $tokenResult->token->expires_at,
